@@ -1,14 +1,19 @@
-import React from "react";
-import productItems from "../Data/productItems";
+import React from 'react';
+import '../styles/Item.scss';
+// import productItems from '../services/productItems';
 
 const ItemList = () => {
   return (
-    <>
-      <div>여기는 아이템 리스트입니다.</div>
-      {productItems.map(item => (
-        <div>{item}</div>
-      ))}
-    </>
+    <div className="item">
+      <div className="item-container">
+        <p className="title" />
+        <div className="body">
+          {/* <img /> */}
+          <p className="price" />
+          <button>dd</button>
+        </div>
+      </div>
+    </div>
   );
 };
 

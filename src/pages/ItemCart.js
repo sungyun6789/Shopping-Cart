@@ -1,7 +1,7 @@
 import React from "react";
 
 const ItemCart = () => {
-  return <div>안녕</div>;
+  return <h1>아이템카트</h1>;
 };
 
 export default ItemCart;
