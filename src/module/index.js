@@ -1,9 +1,8 @@
-// rootReducer
-// import { combineReducer } from 'redux';
-// import { item } from './Data';
+import { combineReducers } from 'redux';
+import cartProduct from './cart';
 
-// const rootReducer = combineReducer({
-//   item,
-// });
+const rootReducer = combineReducers({
+  cartProduct,
+});
 
-// export default rootReducer;
+export default rootReducer;
