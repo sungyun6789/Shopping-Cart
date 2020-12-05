@@ -8,20 +8,21 @@ const ItemList = () => {
   const itemList = productItems;
   const btn = true;
 
+  const { number } = useSelector(({ cartProduct }) => ({
+    number: cartProduct.number,
+  }));
+
   const dispatch = useDispatch();
-
-  const { cartProduct } = useSelector((state) => state.cartProduct);
-
-  const onIncrease = (counter) => dispatch(increase(counter));
-  const onDecrease = (counter) => dispatch(decrease(counter));
+  const onIncrease = () => dispatch(increase());
+  const onDecrease = () => dispatch(decrease());
 
   return (
     <>
       <div className="item">
         {itemList.map((product) => (
-          <div className="item-container">
+          <div className="item-container" key={product.id}>
             <div className="item-title">{product.title}</div>
-            <img alt={product.id} src={product.coverImage} />
+            <img alt={product.title} src={product.coverImage} />
             <div className="item-box">
               <div className="item-price">가격: {product.price}원</div>
               {btn === true ? (

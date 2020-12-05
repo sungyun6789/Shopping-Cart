@@ -2,9 +2,13 @@
 import React from 'react';
 import '../styles/HeaderStyle.scss';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
-  const number = 0;
+  const { number } = useSelector(({ cartProduct }) => ({
+    number: cartProduct.number,
+  }));
+
   return (
     <header className="header">
       <Link to="/list">Store</Link>
