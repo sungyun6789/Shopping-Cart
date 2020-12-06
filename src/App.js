@@ -9,8 +9,7 @@ const App = () => {
     <>
       <Header />
       <Switch>
-        <Route exact path="/" />
-        <Route exact path="/list" component={ItemList} />
+        <Route exact path="/product" component={ItemList} />
         <Route exact path="/cart" component={ItemCart} />
       </Switch>
     </>

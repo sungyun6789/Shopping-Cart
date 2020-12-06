@@ -5,16 +5,17 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const Header = () => {
-  const { number } = useSelector(({ cartProduct }) => ({
-    number: cartProduct.number,
+  const { counter } = useSelector(({ cartProduct }) => ({
+    counter: cartProduct.counter,
   }));
 
   return (
-    <header className="header">
-      <Link to="/list">Store</Link>
-      <Link to="/">About</Link>
-      <Link to="/cart">Cart {number}개</Link>
-    </header>
+    <div className="header-contaienr">
+      <header className="header">
+        <Link to="/product">Store</Link>
+        <Link to="/cart">Cart ({counter})</Link>
+      </header>
+    </div>
   );
 };
 

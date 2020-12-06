@@ -1,0 +1,30 @@
+span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 100px;
+
+  font-size: 30px;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 100px;
+
+  text-decoration: none;
+  color: red;
+}
+
+.cart-container {
+  margin-left: 30px;
+}
+
+.buy-button {
+  width: 100px;
+
+  margin-left: 135px;
+}
