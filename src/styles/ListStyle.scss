@@ -40,13 +40,21 @@
 
 .item-price {
   margin-left: 10px;
-
   font-size: 14px;
 }
 
-button {
-  margin-left: 130px;
+.item-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-list-button {
+  margin-left: 180px;
   padding: 7px;
+
+  width: 60px;
 
   border: none;
   border-radius: 5px;
@@ -57,9 +65,17 @@ button {
   background: black;
 }
 
-.item-list-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+.remove-list-button {
+  margin-left: 180px;
+  padding: 7px;
+
+  width: 60px;
+
+  border: none;
+  border-radius: 5px;
+
+  font-size: 14px;
+  color: white;
+
+  background: black;
 }

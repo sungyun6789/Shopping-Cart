@@ -2,10 +2,10 @@
 
 import React from 'react';
 import Item from '../components/Item';
-import productItems from '../data/productItems';
+import sortList from '../data/productItems';
 
 const ItemList = () => {
-  const list = productItems;
+  const list = sortList;
 
   return (
     <div className="item-list-container">
