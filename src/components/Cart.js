@@ -1,9 +1,13 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { removeItem, increase, decrease, addItem } from '../module/cart';
 
 const Item = (product) => {
   const dispatch = useDispatch();
+
+  const count = useSelector(({ cartProduct }) => ({
+    count: cartProduct.counter,
+  }));
 
   const onIncrease = (product) => dispatch(increase(product));
   const onDecrease = (product) => dispatch(decrease(product));
@@ -18,7 +22,7 @@ const Item = (product) => {
         <img alt={product.title} src={product.coverImage} />
         <div className="item-detail">
           <div className="item-price">가격: {product.price}원</div>
-          {/* <span className="item-count">수량: </span> */}
+          <span className="item-count">수량: {product.counter}개</span>
           <div className="sort-block">
             <button
               className="add-cart-button"

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { clear } from '../module/cart';
 import Cart from '../components/Cart';
@@ -12,11 +12,9 @@ const ItemCart = () => {
     cart: cartProduct.cartList,
   }));
 
-  const [price, setPrice] = useState([]);
-
-  useEffect(() => {
-    setPrice(price + 10);
-  }, []);
+  const { price } = useSelector(({ cartProduct }) => ({
+    price: cartProduct.price,
+  }));
 
   const clickBuyButton = () => {
     dispatch(clear());
@@ -36,7 +34,7 @@ const ItemCart = () => {
           <button className="buy-button" onClick={clickBuyButton}>
             구매
           </button>
-          <div className="price-sum">총 합계{price}원</div>
+          <div className="price-sum">총 합계 {price}원</div>
         </>
       )}
 

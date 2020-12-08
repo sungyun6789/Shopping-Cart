@@ -1,15 +1,15 @@
-// Item.js 에서 값을 가져와 보여주는 페이지
-
 import React from 'react';
 import Item from '../components/Item';
-import sortList from '../data/productItems';
+import productItems from '../data/productItems';
 
 const ItemList = () => {
-  const list = sortList;
+  const sortList = productItems.sort((a, b) => {
+    return a.score < b.score ? -1 : a.score > b.score ? 1 : 0;
+  });
 
   return (
     <div className="item-list-container">
-      {list.map((item) => (
+      {sortList.map((item) => (
         <Item key={item.id} {...item}></Item>
       ))}
     </div>

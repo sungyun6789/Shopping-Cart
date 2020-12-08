@@ -100,8 +100,4 @@ const productItems = [
   },
 ];
 
-const sortList = productItems.sort((a, b) => {
-  return a.score < b.score ? -1 : a.score > b.score ? 1 : 0;
-});
-
-export default sortList;
+export default productItems;

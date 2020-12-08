@@ -8,6 +8,7 @@ const ADD_ITEM = 'cart/ADDITEM';
 const REMOVE_ITEM = 'cart/REMOVE_ITEM';
 const CLEAR = 'cart/CLEAR';
 const TOGGLE = 'cart/TOGGLE';
+const PRICE = 'cart/PRICE';
 
 // createActions으로 액션을 만들면 액션에 필요한 추가 데이터는 payload라는 이름으로 사용
 
@@ -17,11 +18,13 @@ export const addItem = createAction(ADD_ITEM, (id) => id);
 export const removeItem = createAction(REMOVE_ITEM, (id) => id);
 export const clear = createAction(CLEAR);
 export const toggle = createAction(TOGGLE);
+export const price = createAction(PRICE);
 
 const initialState = {
   counter: 0,
   cartList: [],
   cartOpen: true,
+  sum: 0,
 };
 
 // handleActions - 첫번째 인자에는 액션에 대한 업데이트 함수, 두번째는 초기값
@@ -52,8 +55,6 @@ const cartProduct = handleActions(
     },
 
     [ADD_ITEM]: (state, { payload }) => {
-      console.log(payload);
-      console.log('payload');
       const cart = state.cartList.find((item) => item.id === payload.id);
       if (!cart) {
         return {
@@ -65,7 +66,9 @@ const cartProduct = handleActions(
           ...state,
           cartList: state.cartList.map((item) => {
             if (item.id === payload.id) {
-              item.counter++;
+              if (item.counter < 3) {
+                item.counter++;
+              }
             }
             return item;
           }),
@@ -99,6 +102,15 @@ const cartProduct = handleActions(
 
     [TOGGLE]: (state) => {
       return { cartOpen: !state.cartOpen };
+    },
+
+    [PRICE]: (state) => {
+      return {
+        ...state,
+        sum: state.cartList.map((item) => {
+          return state.sum + state.price;
+        }),
+      };
     },
   },
   initialState,
