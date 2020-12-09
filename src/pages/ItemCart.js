@@ -17,26 +17,33 @@ const ItemCart = () => {
   const { cartList } = useSelector(({ cartProduct }) => ({
     cartList: cartProduct.cartList,
   }));
+
   const initializePrice = cartList.reduce((acc, cur) => (acc += cur.price), 0);
   useEffect(() => {
     setTotalPrice(initializePrice);
   }, []);
+
   const displayPrice = new Intl.NumberFormat().format(totalPrice);
+
   const clickBuyButton = () => {
     dispatch(clear());
     alert(`${totalPrice} 원 결제가 완료되었습니다.'`);
   };
+
   const handleCheckbox = (index) => {
     let handleCheckedArray = [...couponChecks];
     handleCheckedArray[index].checked = !handleCheckedArray[index].checked;
     setTotalPrice(initializePrice);
     setCouponChecks(handleCheckedArray);
+
     const checkRateCoupon = couponChecks.find(
       (item) => item.type === 'rate' && item.checked,
     );
+
     const checkAmountCoupon = couponChecks.find(
       (item) => item.type === 'amount' && item.checked,
     );
+
     let price = 0;
     if (checkRateCoupon && checkAmountCoupon) {
       price =
@@ -55,6 +62,7 @@ const ItemCart = () => {
       setTotalPrice(price);
     }
   };
+
   return (
     <div>
       <div className="cart-body">
