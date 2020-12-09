@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addItem, removeItem, decrease, increase, price } from '../module/cart';
+import { addItem, removeItem, decrease, increase, total } from '../module/cart';
 import '../styles/ListStyle.scss';
 
 const Item = (product) => {
@@ -15,7 +15,7 @@ const Item = (product) => {
   const plusItem = (product) => dispatch(addItem(product));
   const minusItem = (product) => dispatch(removeItem(product));
 
-  const priceAdd = (product) => dispatch(price(product));
+  const price = (product) => dispatch(total(product));
 
   return (
     <>
@@ -32,7 +32,7 @@ const Item = (product) => {
                 onIncrease();
                 plusItem(product);
                 setToggle(!toggle);
-                priceAdd(product);
+                price(product);
               }}
             >
               담기

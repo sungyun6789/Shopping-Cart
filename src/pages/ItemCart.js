@@ -8,12 +8,12 @@ import '../styles/CartStyle.scss';
 const ItemCart = () => {
   const dispatch = useDispatch();
 
-  const { cart } = useSelector(({ cartProduct }) => ({
-    cart: cartProduct.cartList,
+  const { cartList } = useSelector(({ cartProduct }) => ({
+    cartList: cartProduct.cartList,
   }));
 
   const { price } = useSelector(({ cartProduct }) => ({
-    price: cartProduct.price,
+    price: cartProduct.cartList.sum,
   }));
 
   const clickBuyButton = () => {
@@ -24,12 +24,12 @@ const ItemCart = () => {
   return (
     <div>
       <div className="cart-body">
-        {cart.length >= 0 &&
-          cart.map((item) => (
-            <Cart key={item.id} item={item} product={item.id} {...item} />
+        {Object.keys(cartList).length >= 0 &&
+          cartList.map((item) => (
+            <Cart key={item.id} item={item} prodct={item.id} {...item} />
           ))}
       </div>
-      {cart.length > 0 && (
+      {Object.keys(cartList).length > 0 && (
         <>
           <button className="buy-button" onClick={clickBuyButton}>
             구매
@@ -38,10 +38,10 @@ const ItemCart = () => {
         </>
       )}
 
-      {cart.length === 0 && (
+      {Object.keys(cartList).length === 0 && (
         <span className="empty_basket">장바구니가 비었습니다.</span>
       )}
-      {cart.length === 0 && (
+      {Object.keys(cartList).length === 0 && (
         <Link to="/products" className="back-store">
           다시 쇼핑하러 가시겠습니까?
         </Link>

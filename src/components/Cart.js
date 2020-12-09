@@ -1,13 +1,9 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { removeItem, increase, decrease, addItem } from '../module/cart';
 
 const Item = (product) => {
   const dispatch = useDispatch();
-
-  const count = useSelector(({ cartProduct }) => ({
-    count: cartProduct.counter,
-  }));
 
   const onIncrease = (product) => dispatch(increase(product));
   const onDecrease = (product) => dispatch(decrease(product));
