@@ -3,7 +3,6 @@ import { Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import ItemCart from './pages/ItemCart';
 import ItemList from './pages/ItemList';
-
 const App = () => {
   return (
     <>
@@ -15,5 +14,4 @@ const App = () => {
     </>
   );
 };
-
 export default App;

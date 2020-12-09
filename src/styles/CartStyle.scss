@@ -3,120 +3,93 @@
   justify-content: center;
   align-items: center;
 }
-
 .back-store {
   display: flex;
   justify-content: center;
   align-items: center;
-
   margin-top: 100px;
-
   text-decoration: none;
   color: red;
 }
-
 .buy-button {
   display: flex;
   justify-content: center;
   align-items: center;
-
   margin-top: 100px;
   margin-left: 45%;
   padding: 7px;
-
   width: 200px;
   height: 50px;
-
   border: none;
   border-radius: 5px;
-
   font-size: 14px;
-
   color: white;
-
   background: black;
 }
-
 .sort-block {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .add-cart-button {
   display: flex;
   justify-content: center;
   align-items: center;
-
   margin-left: 10px;
   padding: 7px;
-
   width: 30px;
-
   border: none;
   border-radius: 5px;
-
   font-size: 14px;
   color: white;
-
   background: black;
 }
-
 .remove-cart-button {
   display: flex;
   justify-content: center;
   align-items: center;
-
   margin-left: 10px;
   padding: 7px;
-
   width: 30px;
   height: 31px;
-
   border: none;
   border-radius: 5px;
-
   font-size: 14px;
   color: white;
-
   background: black;
 }
-
 .remove-button {
   display: flex;
   justify-content: center;
   align-items: center;
-
   margin-left: 10px;
   padding: 7px;
-
   width: 60px;
   border: none;
   border-radius: 5px;
-
   font-size: 14px;
   color: white;
-
   background: black;
 }
-
 .price-sum {
   display: flex;
   justify-content: center;
-
+  align-items: center;
   margin-top: 30px;
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+  }
 }
-
 .empty_basket {
   display: flex;
   justify-content: center;
   align-items: center;
-
   margin-top: 100px;
-
   font-size: 30px;
 }
-
 .item-count {
   font-size: 14px;
   margin-left: 100px;
